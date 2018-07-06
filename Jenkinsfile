@@ -26,12 +26,12 @@ pipeline {
             parallel{
                 stage('Deploy to Staging'){
                     steps{
-                        sh "cp -i **/target/*.war C:\Users\User\Desktop\Garima_StudyMaterials\apache-tomcat-8.5.31-staging\apache-tomcat-8.5.31\webapps"
+                        sh "cp -i **/target/*.war C:/Users/User/Desktop/Garima_StudyMaterials/apache-tomcat-8.5.31-staging/apache-tomcat-8.5.31/webapps"
                     }
                 }
                 stage('Deploy to Prod'){
                     steps{
-                        sh "cp -i **/target/*.war C:\Users\User\Desktop\Garima_StudyMaterials\apache-tomcat-8.5.31-prod\apache-tomcat-8.5.31\webapps "
+                        sh "cp -i **/target/*.war C:/Users/User/Desktop/Garima_StudyMaterials/apache-tomcat-8.5.31-prod/apache-tomcat-8.5.31/webapps "
                     }
                 }
 
