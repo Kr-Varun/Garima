@@ -27,7 +27,7 @@ pipeline{
 
 		stage ('Deploy to staging'){
 			steps{
-				sh "scp -i C:\ws_garima1\Garima **/target/*.war vagrant@ubuntu-control:/var/lib/tomcat7/webapps"
+				sh "scp -i **/target/*.war vagrant@ubuntu-control:/var/lib/tomcat7/webapps"
 			}
 		}
 	}
