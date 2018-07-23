@@ -27,7 +27,7 @@ pipeline{
 
 		stage ('Deploy to staging'){
 			steps{
-				sh "scp vagrant@${params.tomcat_dev}:**/target/*.war vagrant@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
+				sh "scp vagrant@${params.tomcat_dev}:/var/lib/jenkins/workspace/Test2-webhook/**/target/*.war vagrant@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
 			}
 		}
 	}
