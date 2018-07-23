@@ -27,7 +27,7 @@ pipeline{
 
 		stage ('Deploy to staging'){
 			steps{
-				sh "scp vagrant@${params.tomcat_dev}:**/target/*.war  vagrant@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
+				sh -o StrictHostKeyChecking=no "scp vagrant@${params.tomcat_dev}:**/target/*.war  vagrant@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
 			}
 		}
 	}
