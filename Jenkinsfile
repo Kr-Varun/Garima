@@ -11,11 +11,25 @@ pipeline{
 	}
 	
 	stages{
+
 		stage ('Build'){
 			steps{
-				echo 'Hello World!'
+				sh 'mvn clean package'
+				echo 'Building war file...'
 				}
+			post{
+				success{
+				echo 'Now Archiving...'
+				archiveArtifacts artifacts:'**/target/*.war'
+				}
+			}
 			}	
+
+		stage ('Deploy to staging'){
+			steps{
+				sh "scp -i C:/ws_garima1/Garima **/target/*.war vagrant@ubuntu-control:/var/lib/tomcat7/webapps"
+			}
 		}
+	}
 	
 }
