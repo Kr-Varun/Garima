@@ -1,0 +1,7 @@
+Jenkins plugins installed:
+1. Pipeline
+2. Github plugin
+3. Maven integration plugin
+4. LDAP Authentication : To add AD authentication
+5. Matrix Authorization Strategy Plugin : For limiting the type of access to users
+6. Parameterized build : To pass parameters to build
