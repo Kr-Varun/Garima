@@ -27,7 +27,7 @@ pipeline{
 
 		stage ('Deploy to staging'){
 			steps{
-				sh "scp **/target/*.war vagrant@ubuntu-control:/var/lib/tomcat7/webapps"
+				sh "scp **/target/*.war vagrant@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
 			}
 		}
 	}
